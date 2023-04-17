@@ -4,7 +4,7 @@ const questions = [
         optionA: "Ngab Owi",
         optionB: "Sule",
         optionC: "Obama",
-        optionD: "Hitler",
+        optionD: "OM Kumis Nazi",
         correctOption: "optionD"
     },
 
@@ -81,7 +81,7 @@ const questions = [
     },
 
     {
-        question: `"Provinsi di indonesia dengan persentase kuyang terbanyak ?"`,
+        question: `Provinsi di indonesia dengan persentase kuyang terbanyak ?`,
         optionA: "Lombok Tengah",
         optionB: "Bali",
         optionC: "Jawa Barat",
@@ -141,7 +141,7 @@ const questions = [
         optionA: "Banyak Pelabuhan",
         optionB: "Hasil Laut Melimpah",
         optionC: "Laris dipasar dunia",
-        optionD: "Mempunyai banyak pantai indah",
+        optionD: "Banyak pantai indah",
         correctOption: "optionC"
     },
 
@@ -218,13 +218,77 @@ const questions = [
     },
 
     {
-        question: "Cara menjadi orang kaya dengan... ?",
+        question: "Cara menjadi orang kaya dengan ?",
         optionA: "Kerja Keras",
         optionB: "Pesugihan",
         optionC: "Beli Kopi 80rb",
         optionD: "Mencari Hoki",
         correctOption: "optionC"
-    }
+    },
+
+    { 
+        question: "Siapakah raja jalanan?",
+        optionA: "Pejabat",
+        optionB: "Emak-Emak",
+        optionC: "Anak DPR",
+        optionD: "Pembalap",
+        correctOption: "optionB"
+    },
+
+    { 
+        question: "Ras terkuat dibumi adalah... ?",
+        optionA: "Kecoa",
+        optionB: "Tardigrada",
+        optionC: "Wibu",
+        optionD: "Puan",
+        correctOption: "optionC"
+    },
+
+    { 
+        question: "Mengapa penguin tidak bisa terbang ?",
+        optionA: "Mager",
+        optionB: "Jagonya Renang",
+        optionC: "Sudah Takdirnya",
+        optionD: "Biar Antimanstream",
+        correctOption: "optionA"
+    },
+
+    { 
+        question: "Alasan oranng memakai jam adalah... ?",
+        optionA: "Peduli waktu",
+        optionB: "Mampu beli",
+        optionC: "Untuk Gaya",
+        optionD: "Semua Benar",
+        correctOption: "optionD"
+    },
+
+    { 
+        question: "Tujuan Amerika ke Irak untuk... ?",
+        optionA: "Bekerja Sama",
+        optionB: "Ngelut Minyak",
+        optionC: "Bertamasya",
+        optionD: "Bukber",
+        correctOption: "optionB"
+    },
+
+    { 
+        question: "Apa yang terjadi jika Isaac Newton kejatuhan Duren ?",
+        optionA: "Mokad",
+        optionB: "Kepalanya Pecah berdarah",
+        optionC: "Kata 'Jatuh' jadi memusingkan",
+        optionD: "Menghindar",
+        correctOption: "optionB"
+    },
+
+    { 
+        question: "Kenapa B selalu kedinginan ?",
+        optionA: "Tidak Mempunyai Jaket",
+        optionB: "Di luar hujan",
+        optionC: "Sedang sakit",
+        optionD: "Berada Di Tengah AC",
+        correctOption: "optionD"
+    },
+
 
 ]
 
@@ -232,8 +296,8 @@ const questions = [
 let shuffledQuestions = [] //empty array to hold shuffled selected questions
 
 function handleQuestions() { 
-    //function to shuffle and push 10 questions to shuffledQuestions array
-    while (shuffledQuestions.length <= 9) {
+    //function to shuffle and push 15 questions to shuffledQuestions array
+    while (shuffledQuestions.length <= 19) {
         const random = questions[Math.floor(Math.random() * questions.length)]
         if (!shuffledQuestions.includes(random)) {
             shuffledQuestions.push(random)
@@ -314,7 +378,7 @@ function handleNextQuestion() {
     unCheckRadioButtons()
     //delays next question displaying for a second
     setTimeout(() => {
-        if (indexNumber <= 9) {
+        if (indexNumber <= 19) {
             NextQuestion(indexNumber)
         }
         else {
@@ -346,19 +410,19 @@ function handleEndGame() {
     let remarkColor = null
 
     // condition check for player remark and remark color
-    if (playerScore <= 3) {
+    if (playerScore <= 6) {
         remark = "Bodohnya Kebangetan."
         remarkColor = "red"
     }
-    else if (playerScore >= 4 && playerScore < 7) {
+    else if (playerScore >= 7 && playerScore < 15) {
         remark = "Segini doank?"
         remarkColor = "orange"
     }
-    else if (playerScore >= 7) {
+    else if (playerScore >= 16) {
         remark = "Mantap!"
         remarkColor = "green"
     }
-    const playerGrade = (playerScore / 10) * 100
+    const playerGrade = (playerScore / 20) * 100
 
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
