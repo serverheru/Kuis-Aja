@@ -297,7 +297,7 @@ let shuffledQuestions = [] //empty array to hold shuffled selected questions
 
 function handleQuestions() { 
     //function to shuffle and push 15 questions to shuffledQuestions array
-    while (shuffledQuestions.length <= 19) {
+    while (shuffledQuestions.length <= 29) {
         const random = questions[Math.floor(Math.random() * questions.length)]
         if (!shuffledQuestions.includes(random)) {
             shuffledQuestions.push(random)
@@ -378,7 +378,7 @@ function handleNextQuestion() {
     unCheckRadioButtons()
     //delays next question displaying for a second
     setTimeout(() => {
-        if (indexNumber <= 19) {
+        if (indexNumber <= 29) {
             NextQuestion(indexNumber)
         }
         else {
@@ -410,19 +410,19 @@ function handleEndGame() {
     let remarkColor = null
 
     // condition check for player remark and remark color
-    if (playerScore <= 6) {
-        remark = "Bodohnya Kebangetan."
+    if (playerScore <= 11) {
+        remark = "Cemen!."
         remarkColor = "red"
     }
-    else if (playerScore >= 7 && playerScore < 15) {
+    else if (playerScore >= 12 && playerScore < 21) {
         remark = "Segini doank?"
         remarkColor = "orange"
     }
-    else if (playerScore >= 16) {
+    else if (playerScore >= 22) {
         remark = "Mantap!"
         remarkColor = "green"
     }
-    const playerGrade = (playerScore / 20) * 100
+    const playerGrade = (playerScore / 30) * 100
 
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
